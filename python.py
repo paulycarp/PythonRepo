@@ -36,12 +36,15 @@ L[1] = 'c'                  #Replaces h with c
 
 Line = 'mymymy,yesyes,nono,youyouyou,ususus'
 print(Line.split(','))        #Split the values asigned to Line
+print(Line.rstrip())
+print(Line.rstrip().split(','))
 
 Life = 'mistery'
 print(Life.upper())          #Upper and Lowercase conversion
 print(Life.isalpha())        #Content test: isalpha
 print(Life.isnumeric())      #Content test: isnumeric
 print(Life.isdigit())
+
 
 print(greating)
 print(newAge)
