@@ -4,7 +4,7 @@ from myfile import title
 import myfile
 import myfile
 import sys              #Load a library Module
-import random
+import random           #Imports Random Lib.
 print(sys.platform)
 print(2**5)             #Raise 2 to power 5
 
@@ -14,7 +14,7 @@ print(X*8)              #String repetition
 Days = "Today is Thursday"
 print(Days)
 
-power = len(str(2**1000000))       #To the lenght of returned value
+power = len(str(2**1000000))       #To set the lenght of returned value
 
 Name = input("Enter your Name: ")
 
@@ -32,7 +32,16 @@ greating = input("Write a greating: ")
 Fruit = "shrubbery"
 L = list(Fruit)             #Helps to list the string assigned to fruit letter by letter
 L[1] = 'c'                  #Replaces h with c
-#''.join(L)            
+#''.join(L)
+
+Line = 'mymymy,yesyes,nono,youyouyou,ususus'
+print(Line.split(','))        #Split the values asigned to Line
+
+Life = 'mistery'
+print(Life.upper())          #Upper and Lowercase conversion
+print(Life.isalpha())        #Content test: isalpha
+print(Life.isnumeric())      #Content test: isnumeric
+print(Life.isdigit())
 
 print(greating)
 print(newAge)
@@ -57,10 +66,15 @@ print(20 - 10/5*3**2)
 
 print((20-10)/5*3**2)
 
-print("spam!"*8)
+print("spam!"*8)         #prints spam! in multiple of 8 
 
 for x in 'spam!':
     print(x)
+
+Code = 'Codemore'
+print(Code.find('s'))                 #Searches for s in the string assigned to codemore if true it returns 1 else it returns -1
+print(Code.replace('more', 'rforever'))   #Finds 'more' in the string assigned to code and replace it with 'rforever'
+print(Code)
 
 print(myfile.title)
 print(title)
