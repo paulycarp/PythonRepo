@@ -10,6 +10,13 @@ print(2**5)             #Raise 2 to power 5
 
 X = "Spam!"
 print(X*8)              #String repetition
+print(X + 'NI!')
+print(X.__add__('NI!'))
+
+msg = """aaaaaaaabbb'''bbbbbbbb""bbbbbbbb'bbbccccccc"""
+print(msg)
+msg = '\naaaaaaa\nbbb\'\'\'bbbbbbb""bbbbbb\'bbbb\ncccccc\n'
+print(msg)
 
 Days = "Today is Thursday"
 print(Days)
