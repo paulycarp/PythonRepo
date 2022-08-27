@@ -13,6 +13,9 @@ print(X*8)              #String repetition
 print(X + 'NI!')
 print(X.__add__('NI!'))
 
+is_published = True
+is_published = False       #booleans 
+
 msg = """aaaaaaaabbb'''bbbbbbbb""bbbbbbbb'bbbccccccc"""
 print(msg)
 msg = '\naaaaaaa\nbbb\'\'\'bbbbbbb""bbbbbb\'bbbb\ncccccc\n'
@@ -24,17 +27,42 @@ print(Days)
 power = len(str(2**1000000))       #To set the lenght of returned value
 
 Name = input("Enter your Name: ")
+Age = input("Enter your Age: ")
+newAge = int(Age) + float(15)
+greating = input("Write a greating: ")
+
+Full_Name = input('What is your Full Name ')
+Your_Color = input('what is your best color ')
+print(Full_Name + " likes " + Your_Color)
+
+Full_Name = 'John Michael'
+Age = '20'
+is_new = True
+print(Full_Name + ' is ' + Age)
+
+birth_year = input('what is your birth year ')
+age = 2022 - int(birth_year)
+print(age) 
+
+weight_in_pounds = input('what is your weight in pounds ')
+weight_in_kg = int(weight_in_pounds) * float(0.45)                  #concatinating string and float
+print(weight_in_kg)
+
+Python_Tutoria = "I want to learn this python, God Please help me"
+print(Python_Tutoria[0])                                            #This helps us to get the index
+
+introduction ='''
+My name is Mr. D
+I am a native of banyi
+i wish to learn Python to change my status of life
+Please God give me the grace to make it a habbit
+'''
+print(introduction)                                             #We use 3 quotation when we have multiple lines data.
 
 Food = bytearray(b'Fish')
 Food.extend(b'roll')
 print(Food)
 print(Food.decode())
-
-Age = input("Enter your Age: ")
-
-newAge = int(Age) + float(25)
-
-greating = input("Write a greating: ")
 
 Fruit = "shrubbery"
 L = list(Fruit)             #Helps to list the string assigned to fruit letter by letter
