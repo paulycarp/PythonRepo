@@ -1,5 +1,4 @@
-                                            
-                                            #My python class starts
+#My python class starts
 import sys              #Load a library Module
 import random           #Imports Random Lib.
 import math             #This imports Math Module
@@ -14,16 +13,16 @@ print(X*8)              #String repetition
 print(X + 'NI!')
 print(X.__add__('NI!'))
 
-is_published = True
-is_published = False       #boolean
+IS_PUBLISHED = True
+IS_PUBLISHED = False       #boolean
 
-split = """aaaaaaaabbb'''bbbbbbbb""bbbbbbbb'bbbccccccc"""
-print(split)
-split = '\naaaaaaa\nbbb\'\'\'bbbbbbb""bbbbbb\'bbbb\ncccccc\n'
-print(split)
+SPLIT = """aaaaaaaabbb'''bbbbbbbb""bbbbbbbb'bbbccccccc"""
+print(SPLIT)
+SPLIT = '\naaaaaaa\nbbb\'\'\'bbbbbbb""bbbbbb\'bbbb\ncccccc\n'
+print(SPLIT)
 
-Days = "Today is Thursday"
-print(Days)
+DAYS = "Today is Thursday"
+print(DAYS)
 
 #CONCATINATION
 Name = input("Enter your Name: ")
@@ -38,75 +37,86 @@ Full_Name = input('What is your Full Name? ')
 Your_Color = input('what is your best color? ')
 print(Full_Name + " likes " + Your_Color)
 
-Full_Name = 'John Michael'
-Age = '20'
-is_new = True
-print(Full_Name + ' is ' + Age)
+FULL_NAME = 'John Michael'
+AGE = '20'
+IS_NEW = True
+print(FULL_NAME + ' is ' + AGE)
 
-birth_year = input('what is your birth year? ')
-age = 2022 - int(birth_year)
-print(age)
+FIRST = "PAULINUS"
+LAST = "OKECHI"
+FULLNAME = FIRST + " " + LAST
+print(FULLNAME.title())
+
+BIRTH_YEAR = input('what is your birth year? ')
+AGE = 2022 - int(BIRTH_YEAR)
+print(AGE)
 
 weight_in_pounds = input('what is your weight in pounds? ')
 weight_in_kg = int(weight_in_pounds) * float(0.45)                  #concatinating string and float
 print(weight_in_kg)
 
 #FETCHING THE INDEX OF A CHARACTER IN A STRING
-python_tutorial = "I want to learn this python, God Please help me"
-print(python_tutorial[0])                             #This helps us to get the index of a character starting from the begining
-print(python_tutorial[-1])                            #This helps us to get the index of a character starting from the end
-print(python_tutorial[0:3])                           #This helps us to get the index of a character starting from index 0 to index 2 omitting index 3
-print(python_tutorial[0:])                            #This helps us to get the index of a character starting from the begining to the end
-print(python_tutorial[1:])                            #This helps us to get the index of a character starting from the second later to the end
-print(python_tutorial[:7])                            #This helps us to get the index of a character starting from index 0 to index 6 omitting index 7
+NAME = "Michael"
+print(NAME[1:-1])   #The block parentaces helps us to get the index of a character starting from the second letter through to second to the last
 
-name = "Michael"
-print(name[1:-1])                                    #This helps us to get the index of a character starting from index 1(I) to index second to the last omitting last index
+PYTHON_TUTORIAL = "I want to learn this python, God Please help me"
+print(PYTHON_TUTORIAL[0])  #This helps us to get the index of a character starting from the begining
+print(PYTHON_TUTORIAL[-1])      #This helps us to get the index of a character starting from the end
+print(PYTHON_TUTORIAL[0:3])                           #This helps us to get the index of a character starting from index 0 to index 2 omitting index 3
+print(PYTHON_TUTORIAL[0:])                            #This helps us to get the index of a character starting from the begining to the end
+print(PYTHON_TUTORIAL[1:])                            #This helps us to get the index of a character starting from the second later to the end
+print(PYTHON_TUTORIAL[:7])                            #This helps us to get the index of a character starting from index 0 to index 6 omitting index 7
 
 #Formatted Strings
-#FOrmatted strings are particularly useful where we want to dynamically generate some text from our variable.
+#Formatted strings are useful where we want to dynamically generate some text from our variable.
 
-First_Name ='John'
-Last_Name ='Okechi'
-Massage = First_Name + ' ['+ Last_Name +'] is Dead' #Concatination worked but it will be difficult if we have more lines of code
-print(Massage)
+FIRST_NAME ='John'
+LAST_NAME ='Okechi'
+MASSAGE = FIRST_NAME + ' ['+ LAST_NAME +'] is Dead' #Concatination worked but it will be difficult if we have more lines of code
+print(MASSAGE)
 #Now let's use formatted string. Note that the syntax is "f'{}'" {} is called place holder
-msg = f'{First_Name} [{Last_Name}] is Dead'
-print(msg)
+MSG = f'{FIRST_NAME} [{LAST_NAME}] is Dead'
+print(MSG)
 
 #Using 3 quotation marks
-introduction ='''
+INTRODUCTION ='''
 My name is Mr. D
 I am a native of banyi
 i wish to learn Python to change my status of life
 Please God give me the grace to make it a habbit
 '''
-print(introduction)                                             #We use 3 quotation when we have multiple lines data.
+print(INTRODUCTION)                #We use 3 quotation when we have multiple lines data.
 
 #STRING METHODS
 #To print the number of character in a string
-course = "    learning a new programming language call python"
-print(len(course))
-power = len(str(2**1000000))       #To set the lenght of returned value
-print(power)
-print(course.lower())              #To set the characters to lower case
-print(course.upper())              #TO SET THE CHARACTERS TO UPPER CASE
-print(course.find('call'))         #This helps us to find the word call gives the INDEX of the first letter in 'call'
-print(course[36:-7])
-print(course.replace('call', 'named'))   #Finds 'call' in the string assigned to course and replace it with 'named'
-print(course.isalpha())                   #Content test: isalpha returns boolian value "TRUE" if true else false
-print(course.isnumeric())                       #Content test: isnumeric
-print(course.isdigit())
-print(course.title())               #This makes all the first letter capital
-print(course.strip())               #This helps to clear all the spaces
-Line = 'mymymy,yesyes,nono,youyouyou,ususus'
-print(Line.split(','))        #Split the values asigned to Line
-print(Line.rstrip())
-print(Line.rstrip().split(','))
+COURSE = "    learning a new programming language call python   "
+print(len(COURSE))
+POWER = len(str(2**1000000))       #To set the lenght of returned value
+print(POWER)
+print(COURSE.lower())              #To set the characters to lower case
+print(COURSE.upper())              #TO SET THE CHARACTERS TO UPPER CASE
+print(COURSE.find('call'))         #This helps us to find the word call gives the INDEX of the first letter in 'call'
+print(COURSE[36:-7])
+print(COURSE.replace('call', 'named'))   #Finds 'call' in the string assigned to course and replace it with 'named'
+print(COURSE.isalpha())       #Content test: isalpha returns boolian value "TRUE" if true else false
+print(COURSE.isnumeric())                       #Content test: isnumeric
+print(COURSE.isdigit())
+print(COURSE.title())               #This makes all the first letter capital
+print(COURSE.strip())               #This helps to clear all the spaces
+print(COURSE.rstrip())               #This helps to clear spaces on the right
+print(COURSE.lstrip())               #This helps to clear spaces on the left
+
+LINE = '     mymymy,yesyes,nono,youyouyou,ususus   '
+print(LINE.split(','))        #Split the values asigned to Line
+print(LINE.strip().split(','))
 
 #There are times you want to check the existence of a Character or
 # a squence of characters in your string, in those situaltion you use 'in operator'
-print("programming language" in course) #This is called boolian statement. This line of code will search for "programing language" in the values asigned to "course". It returns true if found else return False                                          #Note that the different between 'in' and 'find' is that 'in' returns boolian value while 'find' returns the 'index' of the character
+print("programming language" in COURSE) #This is called boolian statement.
+                                  #It is used to check for the existecne of character in a stringr.
+            # #Note that the different between 'in' and 'find' is that 'in' returns boolian value.
+                                        # while 'find' returns the 'index' of the character
+print("Flash Back" not in COURSE)
 #ARITHIMETIC OPRERATIONS
 # In python we have two type of number
 # *Integer (int) whole numbers and Float (Value with decimal places)
@@ -137,20 +147,26 @@ print((20-10)/5*3**2)
 #ROUND FUNCTION: THIS IS USED TO ROUND A FLOAT TO INT
 X = 2.9
 print(round(X))
+print(bool(X))
 
-#ABSOLUTE FUNCTION (abs): THHIS RETURN THE POSITIVE REPRESENTATIVE OF VALUE EVEN IF IT IS A NEGETVE VALUE
+#ABSOLUTE FUNCTION (abs):
+#THHIS RETURN THE POSITIVE REPRESENTATIVE OF VALUE EVEN IF IT IS A NEGETVE VALUE
 X = -30
 print(abs(X))
 
 #MATH MODULE (for you to use Math Module, You need to import the module)
+print(math.ceil(2.2)) #THIS PRINTS THE APPROXIMATE USING MATHS MODULE
+M = input("M = ")
+N = int(M) + 1
+print(f"M: {M}, N: {N}")
 
 Food = bytearray(b'Fish')
 Food.extend(b'roll')
 print(Food)
 print(Food.decode())
 
-Fruit = "shrubbery"
-L = list(Fruit)             #Helps to list the string assigned to fruit letter by letter
+FRUIT = "shrubbery"
+L = list(FRUIT)             #Helps to list the string assigned to fruit letter by letter
 L[1] = 'c'                  #Replaces h with c
 #''.join(L)
 
@@ -160,7 +176,7 @@ print(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 print(L)
 #print(''.join(L))
 
-print(len(Days))        #Prints the lenght of the content of Days
+print(len(DAYS))        #Prints the lenght of the content of Days
 
 M = "Death"
 N = "Or"
@@ -172,8 +188,8 @@ print("spam!"*8)         #prints spam! in multiple of 8
 for x in 'spam!':
     print(x)
 
-Man = 4 > 9
-print (Man)
+MAN = 4 > 9
+print (MAN)
 
 print(myfile.title)
 print(title)
@@ -182,3 +198,36 @@ print(M, N)
 print(myfile)
 #Axis = u'x' + b'y'
 #print (Axis)
+#To get the numerical representation of any character, do the following
+B = "Z"
+ZE = "z"
+print(ord(ZE))
+print(ord(B))
+
+#COMPARIZINE OPERATORS (<, <=, >, >=, ==, !=)
+IN =  "bag" < "Bag"
+print(IN)
+
+#IF STATEMNET
+TEMPERATURE = 50
+if TEMPERATURE < 40:
+    print("I failed")
+elif TEMPERATURE >= 51:
+    print("ebuka abiakwa")
+else:
+    print("we passed")
+
+AGE = 34
+if AGE >= 30:
+    print("Eligible")
+else:
+    print("Not Eligible")
+            #OR
+if AGE >= 30:
+    MESSAGE = "Eligible"
+else:
+    MESSAGE = "Not Eligible"
+    print(MESSAGE)
+        #OR BEST
+MESSAGE = "Eligible" if AGE >= 18 else "Not Eligible"
+print(MESSAGE)
