@@ -9,9 +9,8 @@ print(sys.platform)
 print(2**5)             #Raise 2 to power 5
 
 X = "Spam!"
-print(X*8)              #String repetition
+print(X * 8)              #String repetition
 print(X + 'NI!')
-print(X.__add__('NI!'))
 
 IS_PUBLISHED = True
 IS_PUBLISHED = False       #boolean
@@ -23,6 +22,7 @@ print(SPLIT)
 
 DAYS = "Today is Thursday"
 print(DAYS)
+print(len(DAYS))        #Prints the lenght of the content of Days
 
 #CONCATINATION
 Name = input("Enter your Name: ")
@@ -58,6 +58,14 @@ print(weight_in_kg)
 #FETCHING THE INDEX OF A CHARACTER IN A STRING
 NAME = "Michael"
 print(NAME[1:-1])   #The block parentaces helps us to get the index of a character starting from the second letter through to second to the last
+
+MINE = [123, 'Mmine', 1.23]
+print (MINE[0])
+print (MINE + [1, 2, 3,])
+print (MINE * 3)
+print (MINE.append('Yours'))        #This line adds Yours to the list.
+print (MINE.pop(2))                 #This line will delete the second item
+
 
 PYTHON_TUTORIAL = "I want to learn this python, God Please help me"
 print(PYTHON_TUTORIAL[0])  #This helps us to get the index of a character starting from the begining
@@ -105,6 +113,26 @@ print(COURSE.title())               #This makes all the first letter capital
 print(COURSE.strip())               #This helps to clear all the spaces
 print(COURSE.rstrip())               #This helps to clear spaces on the right
 print(COURSE.lstrip())               #This helps to clear spaces on the left
+
+#SORTING
+HELLO = ['Bb', 'Aa', 'Cc', 'Dd']
+print (HELLO.sort())
+print (HELLO.reverse())
+
+MATRIX = [[1, 2, 3],                    #3 x 3 matrix, as Nested list
+          [5, 7, 9],                    #Code can span line if bracketed
+          [6, 8, 4]]
+print(MATRIX)
+print(MATRIX[1])                        #Get Row 2
+print(MATRIX[1][2])                     #Get Row 2 and Item 3
+COL2 = [row[1] for row in MATRIX]    #Get the items in second column
+MATRI = [row[1] + 1 for row in MATRIX]   #Adds 1 to all the items in second column
+MATR = [row[1] for row in MATRIX if row[1] % 2 == 0]    #This line filter out odd item
+DIAG =  [MATRIX[i][i] for i in [0, 1, 2]] #Collect a diagonal from matrix
+print(COL2)
+print(MATRI)
+print(MATR)
+print(DIAG)
 
 LINE = '     mymymy,yesyes,nono,youyouyou,ususus   '
 print(LINE.split(','))        #Split the values asigned to Line
@@ -169,14 +197,11 @@ FRUIT = "shrubbery"
 L = list(FRUIT)             #Helps to list the string assigned to fruit letter by letter
 L[1] = 'c'                  #Replaces h with c
 #''.join(L)
-
-print(7)
-print(random.choice(['cassava', 'cocoyam', 'corn', 'potatoes', 'plantain', 'yam', 'igbagwu', 'okpa', 'beans', 'rice']))
-print(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 print(L)
 #print(''.join(L))
 
-print(len(DAYS))        #Prints the lenght of the content of Days
+print(random.choice(['cassava', 'cocoyam', 'corn', 'potatoes', 'plantain', 'yam', 'igbagwu', 'okpa', 'beans', 'rice']))
+print(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 
 M = "Death"
 N = "Or"
