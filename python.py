@@ -8,7 +8,7 @@ import myfile
 print(sys.platform)
 print(2**5)             #Raise 2 to power 5
 
-X = "Spam!"
+X = "Spam! "
 print(X * 8)              #String repetition
 print(X + 'NI!')
 
@@ -58,7 +58,8 @@ print(weight_in_kg)
 #FETCHING THE INDEX OF A CHARACTER IN A STRING
 #LIST
 NAME = "Michael"
-print(NAME[1:-1])   #The block parentaces helps us to get the index of a character starting from the second letter through to second to the last
+print(NAME[1:-1])   #The block parentaces helps us to get the index of a character,
+                    #starting from the second letter through to second to the last.
 
 MINE = [123, 'Mmine', 1.23]
 print (MINE[0])
@@ -81,8 +82,8 @@ print(PYTHON_TUTORIAL[:7])                            #This helps us to get the 
 
 FIRST_NAME ='John'
 LAST_NAME ='Okechi'
-MASSAGE = FIRST_NAME + ' ['+ LAST_NAME +'] is Dead' #Concatination worked but it will be difficult if we have more lines of code
-print(MASSAGE)
+MASSAGE = FIRST_NAME + ' ['+ LAST_NAME +'] is Dead'  #Concatination worked but it will be difficult,
+print(MASSAGE)                                       #if we have more lines of code
 #Now let's use formatted string. Note that the syntax is "f'{}'" {} is called place holder
 MSG = f'{FIRST_NAME} [{LAST_NAME}] is Dead'
 print(MSG)
@@ -104,9 +105,11 @@ POWER = len(str(2**1000000))       #To set the lenght of returned value
 print(POWER)
 print(COURSE.lower())              #To set the characters to lower case
 print(COURSE.upper())              #TO SET THE CHARACTERS TO UPPER CASE
-print(COURSE.find('call'))         #This helps us to find the word call gives the INDEX of the first letter in 'call'
+print(COURSE.find('call'))         #This helps us to find the word call gives the
+                                   #INDEX of the first letter in 'call'
 print(COURSE[36:-7])
-print(COURSE.replace('call', 'named'))   #Finds 'call' in the string assigned to course and replace it with 'named'
+print(COURSE.replace('call', 'named'))          #Finds 'call' in the string assigned to course
+                                                #and replace it with 'named'
 print(COURSE.isalpha())       #Content test: isalpha returns boolian value "TRUE" if true else false
 print(COURSE.isnumeric())                       #Content test: isnumeric
 print(COURSE.isdigit())
@@ -117,16 +120,74 @@ print(COURSE.lstrip())               #This helps to clear spaces on the left
 
 #SORTING
 HELLO = ['Bb', 'Aa', 'Cc', 'Dd']
-print (HELLO.sort())
-print (HELLO.reverse())
+HELLO.sort()
+print(HELLO)
+HELLO.reverse()
+print(HELLO)
+
+#IF STATEMNET
+#SAMPLING
+SAMPLE = {'A': 3, 'B': 9, 'D': 81}
+print(SAMPLE)
+SAMPLE['E'] = 6561                      #ASSIGNING NEW KEY GROWS DICTIONARY
+print(SAMPLE)
+if 'F' not in SAMPLE:
+    print('missing')
+
+TEMPERATURE = 50
+ALSO = {'A': 2, 'B': 4, 'C': 6,}
+if TEMPERATURE < 40:
+    print("I failed")
+elif TEMPERATURE >= 51:
+    print("ebuka abiakwa")
+else:
+    print("we passed")
+
+AGE = 34
+if AGE >= 30:
+    print("Eligible")
+else:
+    print("Not Eligible")
+            #OR
+if AGE >= 30:
+    MESSAGE = "Eligible"
+else:
+    MESSAGE = "Not Eligible"
+    print(MESSAGE)
+        #OR BEST
+MESSAGE = "Eligible" if AGE >= 18 else "Not Eligible"
+print(MESSAGE)
+
+SOLUTION = ALSO.get('E', 'Mission')
+print(SOLUTION)
+SOLUTION = ALSO['A'] if 'A' in ALSO else 'Missing'
+print(SOLUTION)
 
 #NESTINIG/LIST COMPREHENSION
 MATRIX = [[1, 2, 3],                    #3 x 3 matrix, as Nested list
           [5, 7, 9],                    #Code can span line if bracketed
           [6, 8, 4]]
 print(MATRIX)
-print(MATRIX[1])                                         #Get Row 2
-print(MATRIX[1][2])                                      #Get Row 2 and Item 3
+print(MATRIX[1])                        #Get Row 2
+print(MATRIX[1][2])                     #Get Row 2 and Item 3
+
+#FOR LOOP
+print("spam!"*8)                        #prints spam! in multiple of 8
+
+for x in 'spam!':
+    print(x)
+    print(x.upper())
+
+TIME = dict(Name='Paul', Job='Dev', Age=45)                     #KEYWORDS
+TIME2 = dict(zip(['Name', 'Job', 'Age'], ['Bob', 'Dev', 49 ])) #Zipping
+print(TIME)
+print(TIME2)
+print(list(TIME2.keys()))                                     #Unordered keys list
+#print(TIME2.sort())
+for key in TIME2:                                             #Iterate though sorted keys
+    print(key, "=>", TIME2[key])
+for key in sorted(TIME2):                                     #sorts the items in alphabetical order
+    print(key, '=>', TIME[key])
 
 #LIST COMPREHENSION
 COL2 = [row[1] for row in MATRIX]                       #Get the items in second column
@@ -134,7 +195,7 @@ MATRI = [row[1] + 1 for row in MATRIX]                  #Adds 1 to all the items
 MATR = [row[1] for row in MATRIX if row[1] % 2 == 0]    #This line filter out odd item
 DIAG =  [MATRIX[i][i] for i in [0, 1, 2]]               #Collect a diagonal from matrix
 DOUBLE = [b * 3 for b in 'spam']                        #Multiply the string item
-GENERATOR = (sum(row) for row in MATRIX)               #This creates a generator of row sum
+GENERATOR = (sum(row) for row in MATRIX)                #This creates a generator of row sum
 print(COL2)
 print(MATRI)
 print(MATR)
@@ -165,6 +226,35 @@ print(VAN)
 print(BUS)
 print(CAR)
 
+#SQUARE OF A LIST OF NUMBER USING FOR LOOP
+SQUARE = [x ** 2 for x in [1, 2, 3, 4, 5]]
+print(SQUARE)
+SQURE = []
+for x in [1, 2, 3, 4, 5]:           #This is what a list comprehension does
+    SQURE.append(x ** 2)             #Both run the iteration protocal internally
+    print(SQURE)
+
+#WHILE LOOP
+WHILE = 4
+while WHILE > 0:
+    print('DevMan ' * WHILE)      #MULTIPLIES THE DEVMAN ITEM TO THE NUMBER OF VALUE STORED IN WHILE
+    WHILE -= 1                    #PRINTS THE ITEM IN WHILE IN REDUCTION OF 1
+    print(WHILE)
+
+#TUPLES
+TUPLE = (1, 2, 3, 4)
+print(len(TUPLE))               #PRINT OUT THE LENGHT
+print(TUPLE + (5, 5, 5, 6, 7))  #CONCATENATING ANOTHER ITEMS TO TUPLE
+print(TUPLE[0])                 #PRINT OUT THE ITEM IN INDEX 0
+print(TUPLE.count(5))           #COUNTS HOW MANY 5 APPERED
+print(TUPLE.index(2))           #PRINT OUT THE ITEM IN INDEX 2
+TUPLE = (2,) + TUPLE[1:]
+print(TUPLE)
+TUPL = 'PAN', 9.0, [11, 22, 33]
+print(TUPL[1])
+print(TUPL[2][1])
+#TUPLE.append(4)                #TUPLE HAS NO ATTRIBUTE 'APPEND'
+
 LINE = '     mymymy,yesyes,nono,youyouyou,ususus   '
 print(LINE.split(','))        #Split the values asigned to Line
 print(LINE.strip().split(','))
@@ -184,17 +274,6 @@ DATA['age'] = 34
 print(DATA)
 print(DATA['job'])
 
-TIME = dict(Name='Paul', Job='Dev', Age=45)                     #KEYWORDS
-TIME2 = dict(zip(['Name', 'Job', 'Age'], ['Bob', 'Dev', 49 ])) #Zipping
-print(TIME)
-print(TIME2)
-print(list(TIME2.keys()))           #Unordered keys list
-#print(TIME2.sort())
-for key in TIME2:                   #Iterate though sorted keys
-    print(key, "=>", TIME2[key])
-for key in sorted(TIME2):           #sorts the items in alphabetical order
-    print(key, '=>', TIME[key])
-
 #NESTING REVISITED
 REC = {'Name': {'First': 'Michael', 'Last': 'Smath'},
         'Jobs': ['Dev', 'Mgr'],
@@ -206,13 +285,14 @@ print(REC['Jobs'][-1])                  #Index the nested list
 REC['Jobs'].append('Janitor')           #Expand Bob's Job description in place
 print(REC)
 
-#SAMPLING
-SAMPLE = {'A': 3, 'B': 9, 'D': 81}
-print(SAMPLE)
-SAMPLE['E'] = 6561                      #ASSIGNING NEW KEY GROWS DICTIONARY
-print(SAMPLE)
-if 'F' not in SAMPLE:
-    print('missing')
+#FILES
+F = open('data.txt', 'w')
+F.write('Hello ')
+F.write('World\n')
+F.close()
+F = open('data.txt')
+text = F.read()
+print(text)
 
 #There are times you want to check the existence of a Character or
 # a squence of characters in your string, in those situaltion you use 'in operator'
@@ -276,19 +356,14 @@ L[1] = 'c'                  #Replaces h with c
 print(L)
 #print(''.join(L))
 
-print(random.choice(['cassava', 'cocoyam', 'corn', 'potatoes', 'plantain', 'yam', 'igbagwu', 'okpa', 'beans', 'rice']))
+print(random.choice(['cassava', 'cocoyam', 'corn', 'potatoes', 'plantain', 'yam',
+                    'igbagwu', 'okpa', 'beans', 'rice']))
 print(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 
 M = "Death"
 N = "Or"
 O = "Life"
 print(M, N, O)
-
-print("spam!"*8)         #prints spam! in multiple of 8
-
-for x in 'spam!':
-    print(x)
-    print(x.upper())
 
 MAN = 4 > 9
 print (MAN)
@@ -309,33 +384,3 @@ print(ord(B))
 #COMPARIZINE OPERATORS (<, <=, >, >=, ==, !=)
 IN =  "bag" < "Bag"
 print(IN)
-
-#IF STATEMNET
-TEMPERATURE = 50
-ALSO = {'A': 2, 'B': 4, 'C': 6,}
-if TEMPERATURE < 40:
-    print("I failed")
-elif TEMPERATURE >= 51:
-    print("ebuka abiakwa")
-else:
-    print("we passed")
-
-AGE = 34
-if AGE >= 30:
-    print("Eligible")
-else:
-    print("Not Eligible")
-            #OR
-if AGE >= 30:
-    MESSAGE = "Eligible"
-else:
-    MESSAGE = "Not Eligible"
-    print(MESSAGE)
-        #OR BEST
-MESSAGE = "Eligible" if AGE >= 18 else "Not Eligible"
-print(MESSAGE)
-
-SOLUTION = ALSO.get('E', 'Mission')
-print(SOLUTION)
-SOLUTION = ALSO['A'] if 'A' in ALSO else 'Missing'
-print(SOLUTION)
