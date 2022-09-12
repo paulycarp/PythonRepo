@@ -189,9 +189,11 @@ TIME2 = dict(zip(['Name', 'Job', 'Age'], ['Bob', 'Dev', 49 ])) #Zipping
 print(TIME)
 print(TIME2)
 print(list(TIME2.keys()))           #Unordered keys list
-#print(TIME.sort())
+#print(TIME2.sort())
 for key in TIME2:                   #Iterate though sorted keys
     print(key, "=>", TIME2[key])
+for key in sorted(TIME2):           #sorts the items in alphabetical order
+    print(key, '=>', TIME[key])
 
 #NESTING REVISITED
 REC = {'Name': {'First': 'Michael', 'Last': 'Smath'},
@@ -286,6 +288,7 @@ print("spam!"*8)         #prints spam! in multiple of 8
 
 for x in 'spam!':
     print(x)
+    print(x.upper())
 
 MAN = 4 > 9
 print (MAN)
