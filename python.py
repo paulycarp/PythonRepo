@@ -56,6 +56,7 @@ weight_in_kg = int(weight_in_pounds) * float(0.45)                  #concatinati
 print(weight_in_kg)
 
 #FETCHING THE INDEX OF A CHARACTER IN A STRING
+#LIST
 NAME = "Michael"
 print(NAME[1:-1])   #The block parentaces helps us to get the index of a character starting from the second letter through to second to the last
 
@@ -119,24 +120,97 @@ HELLO = ['Bb', 'Aa', 'Cc', 'Dd']
 print (HELLO.sort())
 print (HELLO.reverse())
 
+#NESTINIG/LIST COMPREHENSION
 MATRIX = [[1, 2, 3],                    #3 x 3 matrix, as Nested list
           [5, 7, 9],                    #Code can span line if bracketed
           [6, 8, 4]]
 print(MATRIX)
-print(MATRIX[1])                        #Get Row 2
-print(MATRIX[1][2])                     #Get Row 2 and Item 3
-COL2 = [row[1] for row in MATRIX]    #Get the items in second column
-MATRI = [row[1] + 1 for row in MATRIX]   #Adds 1 to all the items in second column
+print(MATRIX[1])                                         #Get Row 2
+print(MATRIX[1][2])                                      #Get Row 2 and Item 3
+
+#LIST COMPREHENSION
+COL2 = [row[1] for row in MATRIX]                       #Get the items in second column
+MATRI = [row[1] + 1 for row in MATRIX]                  #Adds 1 to all the items in second column
 MATR = [row[1] for row in MATRIX if row[1] % 2 == 0]    #This line filter out odd item
-DIAG =  [MATRIX[i][i] for i in [0, 1, 2]] #Collect a diagonal from matrix
+DIAG =  [MATRIX[i][i] for i in [0, 1, 2]]               #Collect a diagonal from matrix
+DOUBLE = [b * 3 for b in 'spam']                        #Multiply the string item
+GENERATOR = (sum(row) for row in MATRIX)               #This creates a generator of row sum
 print(COL2)
 print(MATRI)
 print(MATR)
 print(DIAG)
+print(DOUBLE)
+print(next(GENERATOR))
+print(next(GENERATOR))
+print(next(GENERATOR))
+
+MAP = list(map(sum, MATRIX))                    #MAP SUM OVER ITEMS IN MATRIX
+SUM = {sum(row) for row in MATRIX}              #CREATE A SET OF SUMS
+SUMM ={i : sum(MATRIX[i]) for i in range(3)}    #CREATES KEY/VALUE TABLE OF ROWS SUMS
+RANGE = list(range(4))
+RANG = list(range(-6, 9, 2))
+AN = [[c ** 2, c ** 3] for c in range(4)]                   #Multiple values "if" filters
+RAN = [[x, x/2, x*3,] for x in range(-6, 9, 2) if x > 0]
+VAN = [ord(x) for x in 'spam']                              #LIST OF CHARACTER ORDINALS
+BUS = {ord(x) for x in 'spam'}                              #SETS REMOVES DUPLICATES
+CAR = {x: ord(x) for x in 'spam'}                           #DICTIONARY KEYS ARE UNIQUE
+print(MAP)
+print(SUM)
+print(SUMM)
+print(RANGE)
+print(RANG)
+print(AN)
+print(RAN)
+print(VAN)
+print(BUS)
+print(CAR)
 
 LINE = '     mymymy,yesyes,nono,youyouyou,ususus   '
 print(LINE.split(','))        #Split the values asigned to Line
 print(LINE.strip().split(','))
+
+#DICTIONARY
+#MAPPING OPERATIONS
+MENU = {'meal': 'food', 'quantity': 3, 'color': 'orange'}
+print(MENU['meal'])                 #Fetch value of key 'meal'
+MENU['quantity' ] += 1               #Add 1 to 'quantity' value
+print(MENU['color'])
+print(MENU)
+
+DATA = {}
+DATA['name'] = 'Bob'
+DATA['job'] = 'dev'
+DATA['age'] = 34
+print(DATA)
+print(DATA['job'])
+
+TIME = dict(Name='Paul', Job='Dev', Age=45)                     #KEYWORDS
+TIME2 = dict(zip(['Name', 'Job', 'Age'], ['Bob', 'Dev', 49 ])) #Zipping
+print(TIME)
+print(TIME2)
+print(list(TIME2.keys()))           #Unordered keys list
+#print(TIME.sort())
+for key in TIME2:                   #Iterate though sorted keys
+    print(key, "=>", TIME2[key])
+
+#NESTING REVISITED
+REC = {'Name': {'First': 'Michael', 'Last': 'Smath'},
+        'Jobs': ['Dev', 'Mgr'],
+        'Age': 34.4}
+print(REC['Name'])                      #'name' is a nested dictionary
+print(REC['Name']['Last'])              #Index the nested dictionary
+print(REC['Jobs'])                      #'Jobs' is a nested list
+print(REC['Jobs'][-1])                  #Index the nested list
+REC['Jobs'].append('Janitor')           #Expand Bob's Job description in place
+print(REC)
+
+#SAMPLING
+SAMPLE = {'A': 3, 'B': 9, 'D': 81}
+print(SAMPLE)
+SAMPLE['E'] = 6561                      #ASSIGNING NEW KEY GROWS DICTIONARY
+print(SAMPLE)
+if 'F' not in SAMPLE:
+    print('missing')
 
 #There are times you want to check the existence of a Character or
 # a squence of characters in your string, in those situaltion you use 'in operator'
@@ -235,6 +309,7 @@ print(IN)
 
 #IF STATEMNET
 TEMPERATURE = 50
+ALSO = {'A': 2, 'B': 4, 'C': 6,}
 if TEMPERATURE < 40:
     print("I failed")
 elif TEMPERATURE >= 51:
@@ -256,3 +331,8 @@ else:
         #OR BEST
 MESSAGE = "Eligible" if AGE >= 18 else "Not Eligible"
 print(MESSAGE)
+
+SOLUTION = ALSO.get('E', 'Mission')
+print(SOLUTION)
+SOLUTION = ALSO['A'] if 'A' in ALSO else 'Missing'
+print(SOLUTION)
