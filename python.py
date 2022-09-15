@@ -1,7 +1,10 @@
 #My python class starts
+from os import cpu_count
 import sys              #Load a library Module
 import random           #Imports Random Lib.
 import math             #This imports Math Module
+import decimal          #This improts Decimal:Fixed precision
+from fractions import Fraction  #This imports: Numerator+Denominator
 from myfile import M, N, O
 from myfile import title
 import myfile
@@ -135,11 +138,12 @@ if 'F' not in SAMPLE:
     print('missing')
 
 TEMPERATURE = 50
-ALSO = {'A': 2, 'B': 4, 'C': 6,}
 if TEMPERATURE < 40:
     print("I failed")
-elif TEMPERATURE >= 51:
+elif TEMPERATURE >= 51:                 #NOTE: YOU CAN USE AS MANY AS "ELIF' YOU WANT
     print("ebuka abiakwa")
+    print("it is warm")
+    print("Drink water")
 else:
     print("we passed")
 
@@ -158,10 +162,93 @@ else:
 MESSAGE = "Eligible" if AGE >= 18 else "Not Eligible"
 print(MESSAGE)
 
+ALSO = {'A': 2, 'B': 4, 'C': 6,}
 SOLUTION = ALSO.get('E', 'Mission')
 print(SOLUTION)
 SOLUTION = ALSO['A'] if 'A' in ALSO else 'Missing'
 print(SOLUTION)
+
+#LOGICAL OPERATOR
+#WE HAVE 3 LOGICAL OPERATORS (AND, OR & NOT)
+#ASSUMING YOU ARE BUILDING APP FOR LOAN PROCESSING
+#WE NEED SOME VARIABLE
+HIGH_INCOME = True
+GOOD_CREDIT = True
+if HIGH_INCOME and GOOD_CREDIT:           #IF ANY OF THE VARIABLE IS FALSE, WE WILL NOT GET ELIGIBLE
+    print("You are Eligible") #In and operator once the two condition is ture the result is true
+else:
+    print("You are not Eligible")
+
+HIGH_INCOME = False
+GOOD_CREDIT = True
+if HIGH_INCOME and GOOD_CREDIT:           #IF ANY OF THE VARIABLE IS FALSE, WE WILL NOT GET ELIGIBLE
+    print("You are Eligible") #In and operator once the two condition is ture the result is true
+else:
+    print("You are not Eligible")
+
+HIGHINCOME = True
+GOODCREDIT = False
+if HIGHINCOME or GOODCREDIT:           #IF ANY OF THE VARIABLE IS FALSE, WE WILL NOT GET ELIGIBLE
+    print("You are Eligible") #In OR operator if any the two condition is ture the result is true
+else:
+    print("You are not Eligible")
+
+HIGHCOME = True
+GOODREDIT = True
+STUDENT = True
+if (HIGHCOME or GOODREDIT) and not STUDENT:
+    print("You are Eligible")
+else:
+    print("You are not Eligible")
+
+HIGHCOME = True
+GOODREDIT = True
+STUDENT = True
+if (HIGHCOME and GOODREDIT) or not STUDENT:
+    print("You are Eligible")
+else:
+    print("You are not Eligible")
+
+#CHAINING COMPARISON OPERATORS
+#ASSUMING WE WANT TO IMPLEMENT A ROW THAT SAYS AGE SHOULD BE BETWEEN 18 AND 65
+AGE = 19
+if AGE >= 18 and AGE <= 65:
+    print("Dear you are Eligible")
+if 18<= AGE <= 65:
+    print("Age Comfirmation Successful")
+
+#LOOP
+#LOOPING IS USED TO CREATE REPETITION
+for number in range(6):
+    print("CODEMORE", number)           #Prints "CODEMORE" 6 times and number them 0-6
+    print('CODEMORE', number + 1)       #ADDS ONE TO THE INDEX AND MAKE IT START FROM 1 INSTED OF 0
+    print("CODEMORE", number + 1, (number + 1) * "*")
+    print("CODEMORE", number + 1, (number) * "*")
+for count in range(1, 20, 2):
+    print("MORECODES", count, )
+    print("MORECODES", count, count * '.',)
+SUCESSFUL = True
+for count in range(6):
+    print('Attempt')
+    if SUCESSFUL:
+        print("You made it")
+        break
+else:
+    print("failed after 6  attempt")
+SUCESSFUL = False
+for count in range(6):
+    print('Attempt')
+    if SUCESSFUL:
+        print("You made it")
+        break
+else:
+    print("failed after 6  attempt")
+
+#NESTED LOOPS (i.e: one loop inside another loop)
+for O in range(7):
+    for P in range(5):
+        print(f"({O}, {P})")
+
 
 #NESTINIG/LIST COMPREHENSION
 MATRIX = [[1, 2, 3],                    #3 x 3 matrix, as Nested list
@@ -208,13 +295,19 @@ print(next(GENERATOR))
 MAP = list(map(sum, MATRIX))                    #MAP SUM OVER ITEMS IN MATRIX
 SUM = {sum(row) for row in MATRIX}              #CREATE A SET OF SUMS
 SUMM ={i : sum(MATRIX[i]) for i in range(3)}    #CREATES KEY/VALUE TABLE OF ROWS SUMS
-RANGE = list(range(4))
+RANGE = list(range(4))                          #NUMBER OF REPETITION
 RANG = list(range(-6, 9, 2))
 AN = [[c ** 2, c ** 3] for c in range(4)]                   #Multiple values "if" filters
 RAN = [[x, x/2, x*3,] for x in range(-6, 9, 2) if x > 0]
 VAN = [ord(x) for x in 'spam']                              #LIST OF CHARACTER ORDINALS
 BUS = {ord(x) for x in 'spam'}                              #SETS REMOVES DUPLICATES
 CAR = {x: ord(x) for x in 'spam'}                           #DICTIONARY KEYS ARE UNIQUE
+DECIMAL = decimal.Decimal('3.141')
+decimal.getcontext().prec = 2
+DECI = decimal.Decimal('1.00') / decimal.Decimal('3.00')
+
+print(DECIMAL + 1)
+print(DECI)
 print(MAP)
 print(SUM)
 print(SUMM)
@@ -231,7 +324,7 @@ SQUARE = [x ** 2 for x in [1, 2, 3, 4, 5]]
 print(SQUARE)
 SQURE = []
 for x in [1, 2, 3, 4, 5]:           #This is what a list comprehension does
-    SQURE.append(x ** 2)             #Both run the iteration protocal internally
+    SQURE.append(x ** 2)            #Both run the iteration protocal internally
     print(SQURE)
 
 #WHILE LOOP
@@ -253,7 +346,6 @@ print(TUPLE)
 TUPL = 'PAN', 9.0, [11, 22, 33]
 print(TUPL[1])
 print(TUPL[2][1])
-#TUPLE.append(4)                #TUPLE HAS NO ATTRIBUTE 'APPEND'
 
 LINE = '     mymymy,yesyes,nono,youyouyou,ususus   '
 print(LINE.split(','))        #Split the values asigned to Line
@@ -286,13 +378,36 @@ REC['Jobs'].append('Janitor')           #Expand Bob's Job description in place
 print(REC)
 
 #FILES
-F = open('data.txt', 'w')
-F.write('Hello ')
+F = open('data.txt', 'w')                   #Makes a new file in output mode('w' is write)
+F.write('Hello ')                           #Writes strings of characters to it
 F.write('World\n')
-F.close()
-F = open('data.txt')
-text = F.read()
-print(text)
+F.write('Nigeria is not a place to be \n\t')
+F.write('For the first time in my life I chose a part of career\n')
+F.close()                                   #Close to flush output buffers to disk
+F = open('data.txt')                        #'r'(read) is the default processing mode
+text = F.read()                             #Read entire file into a string
+print(text)                                 #Print interprets control characters
+print(text.split())
+for line in open('data.txt'): print(line)
+
+#OTHER CORE TYPES
+X = set('codemore')
+Y = {'k', 'i', 'd', 'd', 'i', 'e'}
+CODEMORE = 'C' in set('CODEMORE'), 'C' in 'CODEMORE', 'MORE' in ['man', 'CODEMORE', 'MORE']
+CHECK = set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(X, Y)                             #Filtering out duplicates (possibly reordered)
+print(X & Y)
+print(X | Y)
+print(X - Y)                            #Finding differences in collections
+print(X > Y)
+print(X < Y)
+#print(X = Y)
+print(X <= Y)
+print(X >= Y)
+print(X == Y)
+print(set('CHECK') == set('KECH'))
+print(set('CHECK') - set('ECH'))
+print(CODEMORE)
 
 #There are times you want to check the existence of a Character or
 # a squence of characters in your string, in those situaltion you use 'in operator'
