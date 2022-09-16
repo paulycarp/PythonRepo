@@ -249,6 +249,19 @@ for O in range(7):
     for P in range(5):
         print(f"({O}, {P})")
 
+for M in range(6):
+    print(M)
+
+#NOTE THAT RANGE IS ITERABLE (i.e: it can iterate over it or use it in a "for loop")
+#NOTE ALSO, THAT STRINGS ARE ALSO ITERABLE
+for I in range (5):
+    print(I)
+
+#BUILT IN TYPE HELPS US TO KNOW THE TYPE OF VARIABLE WE STORE AND RETURN
+print(type(SUCESSFUL))
+print(type(AGE))
+print(type(ALSO))
+print(type(INTRODUCTION))
 
 #NESTINIG/LIST COMPREHENSION
 MATRIX = [[1, 2, 3],                    #3 x 3 matrix, as Nested list
@@ -276,7 +289,7 @@ for key in TIME2:                                             #Iterate though so
 for key in sorted(TIME2):                                     #sorts the items in alphabetical order
     print(key, '=>', TIME[key])
 
-#LIST COMPREHENSION
+#LIST COMPREHENSION (LIST USES BLOCK PARAGRAPH)
 COL2 = [row[1] for row in MATRIX]                       #Get the items in second column
 MATRI = [row[1] + 1 for row in MATRIX]                  #Adds 1 to all the items in second column
 MATR = [row[1] for row in MATRIX if row[1] % 2 == 0]    #This line filter out odd item
@@ -328,11 +341,30 @@ for x in [1, 2, 3, 4, 5]:           #This is what a list comprehension does
     print(SQURE)
 
 #WHILE LOOP
-WHILE = 4
+WHILE = 100
 while WHILE > 0:
+    print(WHILE)
     print('DevMan ' * WHILE)      #MULTIPLIES THE DEVMAN ITEM TO THE NUMBER OF VALUE STORED IN WHILE
     WHILE -= 1                    #PRINTS THE ITEM IN WHILE IN REDUCTION OF 1
     print(WHILE)
+    WHILE //= 2
+    print(WHILE)
+
+COMMAND = ""
+while COMMAND != "quit":
+    COMMAND = input(">")
+    print("ECHO", COMMAND)
+
+#CALLING EVEN NUMBERS THAT ARE BETWEEN 1 - 30
+CALL = 0
+for even_number in range(1, 30):
+    if even_number % 2 == 0:
+        CALL += 1
+        print(even_number)
+print(f"We have {CALL} even numbers")
+
+#INFINITE LOOP (THIS IS KNOWN AS FOREVER LOOP)
+
 
 #TUPLES
 TUPLE = (1, 2, 3, 4)
