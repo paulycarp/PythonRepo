@@ -11,6 +11,16 @@ import myfile
 print(sys.platform)
 print(2**5)             #Raise 2 to power 5
 
+#FUNCTION DEFINTION
+#DEFINE YOUR OWN FUNCTION
+def greet(first_name, last_name):
+    print(f"Hi {first_name} {last_name}")
+    print("You are welcome")
+
+greet("Paulinus", "Okechi")
+greet("John", "Michael")
+
+
 X = "Spam! "
 print(X * 8)              #String repetition
 print(X + 'NI!')
@@ -379,7 +389,7 @@ TUPL = 'PAN', 9.0, [11, 22, 33]
 print(TUPL[1])
 print(TUPL[2][1])
 
-LINE = '     mymymy,yesyes,nono,youyouyou,ususus   '
+LINE = "     mymymy,yesyes,nono,youyouyou,ususus   "
 print(LINE.split(','))        #Split the values asigned to Line
 print(LINE.strip().split(','))
 
