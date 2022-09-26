@@ -13,12 +13,31 @@ print(2**5)             #Raise 2 to power 5
 
 #FUNCTION DEFINTION
 #DEFINE YOUR OWN FUNCTION
+#TYPES OF PYTHON: WE HAVE TWO TYPE OF FUNCTION
+# 1. FUNCTION THAT PERFORM A TASK
+# 2. FUNCTION THAT CALCULATES AND RETURN A VALUE
+# 1.
 def greet(first_name, last_name):
     print(f"Hi {first_name} {last_name}")
     print("You are welcome")
 
 greet("Paulinus", "Okechi")
 greet("John", "Michael")
+
+#2.
+def get_greeting(name):
+    return  f"Hi {name}"
+
+message = get_greeting("Okechi")
+print(message) #print on the terminal
+#OR
+#write it in a file
+def greeting(mane):
+    return f"Hi {mane}"
+
+message = greeting("Johnson")
+file = open("content.txt", "w")
+file.write(message)
 
 
 X = "Spam! "
