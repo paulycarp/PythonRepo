@@ -1,10 +1,10 @@
 #My python class starts
-from os import cpu_count
+#from os import cpu_count
 import sys              #Load a library Module
 import random           #Imports Random Lib.
 import math             #This imports Math Module
 import decimal          #This improts Decimal:Fixed precision
-from fractions import Fraction  #This imports: Numerator+Denominator
+#from fractions import Fraction  #This imports: Numerator+Denominator
 from myfile import M, N, O
 from myfile import title
 import myfile
@@ -35,10 +35,162 @@ print(message) #print on the terminal
 def greeting(mane):
     return f"Hi {mane}"
 
-message = greeting("Johnson")
-file = open("content.txt", "w")
-file.write(message)
+#message = greeting("Johnson")
+#file = open("content.txt", "w")
+#file.write(message)
 
+#TO INCREMENT A VALUE
+def increment(num, _by):
+    return num + _by
+
+RESULT = increment(2 ,1)
+print(RESULT)
+#OR
+print(increment(2, 1))
+#OR
+print(increment(2, _by=1))
+
+#IF WE DON'T WANT TO EXPLECITELY PASS Y = 1, WE CAN USE THIS
+def increase(value, _by=1):
+    return value + _by
+
+print(increase(2,)) #this adds
+print(increase(2, 5))
+
+def multiple(_no, _by):
+    return _no * _by
+
+print(multiple(3, 5))
+#IF YOU WANT TO DEFINE MULTIPLICATION
+def multiplication(_x, _y):
+    return _x * _y
+
+multiplication(2, 3)
+#since multiply can only take 2 parameter it makes it imposible to multiply more than 2 parameters
+#So we can do the following to rectify it
+def multiply(*numbers):#the p* in the number
+    for numbe in numbers:
+        print(numbe)
+
+multiply(10, 9, 8, 7)
+#to get the product of multiple number, we do the following
+def multi(*numbs):
+    total = 1
+    for numb in numbs:
+        total *= numb
+    return total#Note that the indentation for this line must be inline with for loop
+
+print(multi(10, 9, 8, 7))
+
+#key word argument format is as follows Name = Chukwuebuka
+#Note that whenever you use duoble (**) axterics, you can be able to pass multiple Key word argument
+def save_user(**user):
+    print(user)
+
+save_user(id = 1, Name = "Paul", Age = 34)
+
+#SCOPE: THIS REFERS TO THE REGION OF THE CODE WHERE A VARIABLE IS DEFINED
+#LOCAL VARIABLE AND GLOBAL VARIABLE
+
+#FIZZ_BUZZ ALGORITHM
+def fizz_buzz(inpt):
+    if inpt % 3 == 0:
+        result = "Fizz"
+    else:
+        result = "Buzz"
+    return result
+
+print(fizz_buzz(3))
+
+#OR
+
+def fizz_buz(inpu):
+    if inpu % 5 == 0:
+        return "Buzz"
+    else:
+        return "Fizz"
+
+print(fizz_buz(15))
+
+#If you want to print FizzBuss do the following
+def fiz_buzz(ouput):
+    if (ouput % 3 == 0) and (ouput % 5 == 0):
+        return "Fiz Buzz"
+    if ouput % 3 == 0:
+        return "Fizz"
+    if ouput % 5 == 0:
+        return "Buzz"
+    return ouput
+
+print(fiz_buzz(15))
+
+#BUILT_IN DATA STRUCTURE
+#LIST, TUPOLE, SETS AND DICTIOARY
+#LIST
+letters = ['a', 'b',  'c']
+zeros = [0] * 5
+concatinate = zeros + letters
+print(concatinate)
+print(zeros)
+count = list(range(10))
+print(count)
+FRUIT = "shrubb ery"
+L = list(FRUIT)             #Helps to list the string assigned to fruit letter by letter
+print(L)
+L[1] = 'C'                  #Replaces h with c
+print(L)
+
+DIGITS = list(range(20))
+print(DIGITS)#THIS PRINTS THE WHOLE DATA FROM 0 - 19
+print(DIGITS[::1])#THIS PRINTS THE WHOLE DATA FROM 0 - 19
+print(DIGITS[::2])#THIS PRINTS ALL THE EVEN NUMBER WITHIN THE RANGE
+print(DIGITS[::3])#THIS PRINTS ALL THE PRIME NUMBER WITHIN THE RANGE
+print(DIGITS[::5])
+print(DIGITS[::-1])#THIS PRINTS THE WHOLE DATA IN REVERSE
+
+#LIST UNPACKING
+DIGITS = (0, 9, 8, 7, 6)
+#FIRST, SECOND = DIGITS WILL GIVE ERROR BECAUSE THE VALUE IN DIGITS IS MORE THAN 2 VALUSE SO
+#INSTEAD OF WRITING "FIRST, SECOND TO THE LAST", WE CAN USE UNPACKING SYNTAX TO ACHEIVE OUR GOAL.
+FIRST, SECOND, THIRD, LAST, *OTHERS = DIGITS #THIS SYNTAX WILL UNPACK REMAINING VALUES INTO *OTHER
+print(FIRST, SECOND, OTHERS) #WE USED THE *OTHERS ABOVE TO STORE THE REMAINING VALUES
+print(FIRST, LAST, OTHERS)
+
+#LOOPING OVER LIST
+ALPHABETS = ["A", "B", "C", "D"]
+ITEMS = [0, "Z" ]
+INDEX, LETTER = ITEMS #WERE ARE UNPACKING ITEM LIST
+for letters in ALPHABETS:
+    print(ALPHABETS)
+#TO GET BOTH THE INDEX, DO THE FOLLOWING
+for INDEX, LETTER, in enumerate(ALPHABETS):
+    print(INDEX, LETTER,)
+for letters in enumerate(ALPHABETS):#THE enumerate HELPS TO PRINT BOTH VALUE AND INDEX OF THE VALUE
+    print(letters)
+
+#ADDING OBJECT
+#ADDING AND REMOVING ITEMS FROM A LIST
+#USING ALPHABET ABOVE
+ALPHABETS.append("E")#APPEND HELP YOU TO ADD VALUE AT THE END OF THE LIST
+print(ALPHABETS)
+#IF YOU WNAT TO ADD VALUE AT ANY SPECIFIC POSITION IN THE LIST, WE USE INSERT
+ALPHABETS.insert(2, "_another_")
+print(ALPHABETS)
+
+#DELETING OBJECT FROM A LIST
+#TO DELETE OBJECT AT THE END OF THE LIST, WE USE POP METHOD
+ALPHABETS.pop() #THIS WILL DELETE THE LAST ITEM IN THE LIST
+print(ALPHABETS)
+ALPHABETS.pop(2)#THIS WILL DELETE ITME AT THE INDEX NO 2
+print(ALPHABETS)
+ALPHABETS.remove("B")#REMOVE HELPS US TO REMOVE A PARTICULAR VALUES
+print(ALPHABETS)
+#TO DELETE A RANGE OF ITEMS, WE USE DELETE METHOD
+del ALPHABETS[2:5]
+print(ALPHABETS)
+#TO DELETE ALL THE OBJECT IN THE LIST, WE USE CLEAR METHOD
+ALPHABETS.clear()
+print(ALPHABETS)
 
 X = "Spam! "
 print(X * 8)              #String repetition
@@ -93,12 +245,12 @@ NAME = "Michael"
 print(NAME[1:-1])   #The block parentaces helps us to get the index of a character,
                     #starting from the second letter through to second to the last.
 
-MINE = [123, 'Mmine', 1.23]
+MINE = [123, 'Mine', 1.23]
 print (MINE[0])
 print (MINE + [1, 2, 3,])
 print (MINE * 3)
-print (MINE.append('Yours'))        #This line adds Yours to the list.
-print (MINE.pop(2))                 #This line will delete the second item
+print (MINE.append('Yours'))     #This line adds Yours AT THE END OF the list.
+print (MINE.pop(2))              #This line will delete the second item
 
 
 PYTHON_TUTORIAL = "I want to learn this python, God Please help me"
@@ -164,7 +316,7 @@ print(SAMPLE)
 SAMPLE['E'] = 6561                      #ASSIGNING NEW KEY GROWS DICTIONARY
 print(SAMPLE)
 if 'F' not in SAMPLE:
-    print('missing')
+    print(' F is missing')
 
 TEMPERATURE = 50
 if TEMPERATURE < 40:
@@ -449,11 +601,12 @@ F = open('data.txt')                        #'r'(read) is the default processing
 text = F.read()                             #Read entire file into a string
 print(text)                                 #Print interprets control characters
 print(text.split())
-for line in open('data.txt'): print(line)
+for line in open('data.txt'):
+    print(line)
 
 #OTHER CORE TYPES
 X = set('codemore')
-Y = {'k', 'i', 'd', 'd', 'i', 'e'}
+Y = {'k', 'i', 'd', 'e'}
 CODEMORE = 'C' in set('CODEMORE'), 'C' in 'CODEMORE', 'MORE' in ['man', 'CODEMORE', 'MORE']
 CHECK = set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 print(X, Y)                             #Filtering out duplicates (possibly reordered)
@@ -525,13 +678,6 @@ Food.extend(b'roll')
 print(Food)
 print(Food.decode())
 
-FRUIT = "shrubbery"
-L = list(FRUIT)             #Helps to list the string assigned to fruit letter by letter
-L[1] = 'c'                  #Replaces h with c
-#''.join(L)
-print(L)
-#print(''.join(L))
-
 print(random.choice(['cassava', 'cocoyam', 'corn', 'potatoes', 'plantain', 'yam',
                     'igbagwu', 'okpa', 'beans', 'rice']))
 print(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
@@ -549,8 +695,7 @@ print(title)
 print(M, N, O)
 print(M, N)
 print(myfile)
-#Axis = u'x' + b'y'
-#print (Axis)
+
 #To get the numerical representation of any character, do the following
 B = "Z"
 ZE = "z"
