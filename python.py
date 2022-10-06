@@ -1,9 +1,10 @@
-#My python class starts
+'''My python class starts'''
 #from os import cpu_count
 import sys              #Load a library Module
 import random           #Imports Random Lib.
 import math             #This imports Math Module
-import decimal          #This improts Decimal:Fixed precision
+import decimal
+#from typing import ItemsView #This improts Decimal:Fixed precision
 #from fractions import Fraction  #This imports: Numerator+Denominator
 from myfile import M, N, O
 from myfile import title
@@ -18,6 +19,7 @@ print(2**5)             #Raise 2 to power 5
 # 2. FUNCTION THAT CALCULATES AND RETURN A VALUE
 # 1.
 def greet(first_name, last_name):
+    """Any dummy string."""
     print(f"Hi {first_name} {last_name}")
     print("You are welcome")
 
@@ -26,6 +28,7 @@ greet("John", "Michael")
 
 #2.
 def get_greeting(name):
+    """Any dummy string."""
     return  f"Hi {name}"
 
 message = get_greeting("Okechi")
@@ -33,6 +36,7 @@ print(message) #print on the terminal
 #OR
 #write it in a file
 def greeting(mane):
+    """Any dummy string."""
     return f"Hi {mane}"
 
 #message = greeting("Johnson")
@@ -41,6 +45,7 @@ def greeting(mane):
 
 #TO INCREMENT A VALUE
 def increment(num, _by):
+    """Any dummy string."""
     return num + _by
 
 RESULT = increment(2 ,1)
@@ -52,29 +57,34 @@ print(increment(2, _by=1))
 
 #IF WE DON'T WANT TO EXPLECITELY PASS Y = 1, WE CAN USE THIS
 def increase(value, _by=1):
+    """Any dummy string."""
     return value + _by
 
 print(increase(2,)) #this adds
 print(increase(2, 5))
 
 def multiple(_no, _by):
+    """Any dummy string."""
     return _no * _by
 
 print(multiple(3, 5))
 #IF YOU WANT TO DEFINE MULTIPLICATION
 def multiplication(_x, _y):
+    """Any dummy string."""
     return _x * _y
 
 multiplication(2, 3)
 #since multiply can only take 2 parameter it makes it imposible to multiply more than 2 parameters
 #So we can do the following to rectify it
 def multiply(*numbers):#the p* in the number
+    """Any dummy string."""
     for numbe in numbers:
         print(numbe)
 
 multiply(10, 9, 8, 7)
 #to get the product of multiple number, we do the following
 def multi(*numbs):
+    """Any dummy string."""
     total = 1
     for numb in numbs:
         total *= numb
@@ -85,6 +95,7 @@ print(multi(10, 9, 8, 7))
 #key word argument format is as follows Name = Chukwuebuka
 #Note that whenever you use duoble (**) axterics, you can be able to pass multiple Key word argument
 def save_user(**user):
+    """Any dummy string."""
     print(user)
 
 save_user(id = 1, Name = "Paul", Age = 34)
@@ -94,6 +105,7 @@ save_user(id = 1, Name = "Paul", Age = 34)
 
 #FIZZ_BUZZ ALGORITHM
 def fizz_buzz(inpt):
+    """Any dummy string."""
     if inpt % 3 == 0:
         result = "Fizz"
     else:
@@ -105,6 +117,7 @@ print(fizz_buzz(3))
 #OR
 
 def fizz_buz(inpu):
+    """Any dummy string."""
     if inpu % 5 == 0:
         return "Buzz"
     else:
@@ -114,6 +127,7 @@ print(fizz_buz(15))
 
 #If you want to print FizzBuss do the following
 def fiz_buzz(ouput):
+    """Any dummy string."""
     if (ouput % 3 == 0) and (ouput % 5 == 0):
         return "Fiz Buzz"
     if ouput % 3 == 0:
@@ -168,7 +182,7 @@ for INDEX, LETTER, in enumerate(ALPHABETS):
 for letters in enumerate(ALPHABETS):#THE enumerate HELPS TO PRINT BOTH VALUE AND INDEX OF THE VALUE
     print(letters)
 
-#ADDING OBJECT
+#ADDING OBJECT UNDER ABJECT ADD IS OF TWE METHOD
 #ADDING AND REMOVING ITEMS FROM A LIST
 #USING ALPHABET ABOVE
 ALPHABETS.append("E")#APPEND HELP YOU TO ADD VALUE AT THE END OF THE LIST
@@ -183,7 +197,7 @@ ALPHABETS.pop() #THIS WILL DELETE THE LAST ITEM IN THE LIST
 print(ALPHABETS)
 ALPHABETS.pop(2)#THIS WILL DELETE ITME AT THE INDEX NO 2
 print(ALPHABETS)
-ALPHABETS.remove("B")#REMOVE HELPS US TO REMOVE A PARTICULAR VALUES
+ALPHABETS.remove("B")#REMOVE HELPS US TO REMOVE A PARTICULAR VALUES IF YOU DON'T KNOW THE INDEX
 print(ALPHABETS)
 #TO DELETE A RANGE OF ITEMS, WE USE DELETE METHOD
 del ALPHABETS[2:5]
@@ -191,6 +205,57 @@ print(ALPHABETS)
 #TO DELETE ALL THE OBJECT IN THE LIST, WE USE CLEAR METHOD
 ALPHABETS.clear()
 print(ALPHABETS)
+
+#SORTING
+HELLO = ['Bb', 'Aa', 'Cc', 'Dd']
+HELLO.sort()
+print(HELLO)
+HELLO.reverse()
+print(HELLO)
+
+#SORTING LIST
+SORTING = [10, 4, 2, 5, 8, 9, 77, 33, 66]
+SORTING.sort()#THIS SORTS IN AN ASCENDING OTHER
+print(SORTING)
+SORTING.sort(reverse=True)#THIS SORTS IN DESCENDING OTHER
+print(SORTING)
+print(sorted(SORTING))#THIS IS = .sort but it accept another argument
+print(sorted(SORTING, reverse=True))#THIS AS WELL IS USED TO PRINT IN REVERSE OTHER
+
+#SORTING PRODUCTS WITH PRICE
+ITEM = [
+    ("Product1", 50),
+    ("product2", 70),
+    ("product3", 20),
+]
+def sort_item(item): #PYTHON CAN'T SORT SO WE NEED TO DEFINE A FUNCTION 4 PYOTHON TO USE AND SORT
+    """Any Dommy string"""
+    return[1]
+ITEM.sort(key=sort_item)
+print(ITEM)
+
+#FETCHING (finding item in a list)THE INDEX OF A CHARACTER IN A STRING
+#LIST
+NAME = "Michael"
+print(NAME[1:-1])   #The block parentaces helps us to get the index of a character,
+                    #starting from the second letter through to second to the last.
+
+MINE = [123, 'Mine', 1.23]
+print (MINE[0])
+print (MINE + [1, 2, 3,])
+print (MINE * 3)
+print (MINE.append('Yours'))     #This line adds Yours AT THE END OF the list.
+print (MINE.pop(2))              #This line will delete the second item
+
+PYTHON_TUTORIAL = "I want to learn this python, ea God Please help mea"
+print(PYTHON_TUTORIAL.index("python"))#To get the index of a word in a string
+print(PYTHON_TUTORIAL[0])#To get the index of a character at the begining
+print(PYTHON_TUTORIAL[-1])#To get the index of a character from behind
+print(PYTHON_TUTORIAL[0:3])#To get the index of a character from index 0 to index 2 omitting index 3
+print(PYTHON_TUTORIAL[0:])#To get the index of a character from the begining to the end
+print(PYTHON_TUTORIAL[1:])#To get the index of a character from the second later to the end
+print(PYTHON_TUTORIAL[:7])#To get the index of a character from index 0 to index 6 omitting index 7
+print(PYTHON_TUTORIAL.count("ea"))#To get number of occurance of the string in the list
 
 X = "Spam! "
 print(X * 8)              #String repetition
@@ -228,38 +293,16 @@ print(FULL_NAME + ' is ' + AGE)
 
 FIRST = "PAULINUS"
 LAST = "OKECHI"
-FULLNAME = FIRST + " " + LAST
-print(FULLNAME.title())
+FULL_NAME = FIRST + " " + LAST
+print(FULL_NAME.title())
 
 BIRTH_YEAR = input('what is your birth year? ')
 AGE = 2022 - int(BIRTH_YEAR)
 print(AGE)
 
 weight_in_pounds = input('what is your weight in pounds? ')
-weight_in_kg = int(weight_in_pounds) * float(0.45)                  #concatinating string and float
+weight_in_kg = int(weight_in_pounds) * float(0.45)   #concatinating string and float
 print(weight_in_kg)
-
-#FETCHING THE INDEX OF A CHARACTER IN A STRING
-#LIST
-NAME = "Michael"
-print(NAME[1:-1])   #The block parentaces helps us to get the index of a character,
-                    #starting from the second letter through to second to the last.
-
-MINE = [123, 'Mine', 1.23]
-print (MINE[0])
-print (MINE + [1, 2, 3,])
-print (MINE * 3)
-print (MINE.append('Yours'))     #This line adds Yours AT THE END OF the list.
-print (MINE.pop(2))              #This line will delete the second item
-
-
-PYTHON_TUTORIAL = "I want to learn this python, God Please help me"
-print(PYTHON_TUTORIAL[0])  #This helps us to get the index of a character starting from the begining
-print(PYTHON_TUTORIAL[-1])      #This helps us to get the index of a character starting from the end
-print(PYTHON_TUTORIAL[0:3])                           #This helps us to get the index of a character starting from index 0 to index 2 omitting index 3
-print(PYTHON_TUTORIAL[0:])                            #This helps us to get the index of a character starting from the begining to the end
-print(PYTHON_TUTORIAL[1:])                            #This helps us to get the index of a character starting from the second later to the end
-print(PYTHON_TUTORIAL[:7])                            #This helps us to get the index of a character starting from index 0 to index 6 omitting index 7
 
 #Formatted Strings
 #Formatted strings are useful where we want to dynamically generate some text from our variable.
@@ -292,9 +335,8 @@ print(COURSE.upper())              #TO SET THE CHARACTERS TO UPPER CASE
 print(COURSE.find('call'))         #This helps us to find the word call gives the
                                    #INDEX of the first letter in 'call'
 print(COURSE[36:-7])
-print(COURSE.replace('call', 'named'))          #Finds 'call' in the string assigned to course
-                                                #and replace it with 'named'
-print(COURSE.isalpha())       #Content test: isalpha returns boolian value "TRUE" if true else false
+print(COURSE.replace('call', 'named'))#Finds 'call' and replace it with 'named'
+print(COURSE.isalpha())     #Content test: isalpha returns boolian value "TRUE" if true else false
 print(COURSE.isnumeric())                       #Content test: isnumeric
 print(COURSE.isdigit())
 print(COURSE.title())               #This makes all the first letter capital
@@ -302,26 +344,19 @@ print(COURSE.strip())               #This helps to clear all the spaces
 print(COURSE.rstrip())               #This helps to clear spaces on the right
 print(COURSE.lstrip())               #This helps to clear spaces on the left
 
-#SORTING
-HELLO = ['Bb', 'Aa', 'Cc', 'Dd']
-HELLO.sort()
-print(HELLO)
-HELLO.reverse()
-print(HELLO)
-
 #IF STATEMNET
 #SAMPLING
 SAMPLE = {'A': 3, 'B': 9, 'D': 81}
 print(SAMPLE)
-SAMPLE['E'] = 6561                      #ASSIGNING NEW KEY GROWS DICTIONARY
+SAMPLE['E'] = 6561 #ASSIGNING NEW KEY GROWS DICTIONARY
 print(SAMPLE)
-if 'F' not in SAMPLE:
+if 'F' not in SAMPLE:#To find out if a word is missing or present in a string
     print(' F is missing')
 
 TEMPERATURE = 50
 if TEMPERATURE < 40:
     print("I failed")
-elif TEMPERATURE >= 51:                 #NOTE: YOU CAN USE AS MANY AS "ELIF' YOU WANT
+elif TEMPERATURE >= 51:    #NOTE: YOU CAN USE AS MANY AS "ELIF' YOU WANT
     print("ebuka abiakwa")
     print("it is warm")
     print("Drink water")
@@ -395,14 +430,14 @@ else:
 AGE = 19
 if AGE >= 18 and AGE <= 65:
     print("Dear you are Eligible")
-if 18<= AGE <= 65:
+if 18 <= AGE <= 65:
     print("Age Comfirmation Successful")
 
 #LOOP
 #LOOPING IS USED TO CREATE REPETITION
 for number in range(6):
-    print("CODEMORE", number)           #Prints "CODEMORE" 6 times and number them 0-6
-    print('CODEMORE', number + 1)       #ADDS ONE TO THE INDEX AND MAKE IT START FROM 1 INSTED OF 0
+    print("CODEMORE", number)       #Prints "CODEMORE" 6 times and number them 0-6
+    print('CODEMORE', number + 1)   #ADDS ONE TO THE INDEX AND MAKE IT START FROM 1 INSTED OF 0
     print("CODEMORE", number + 1, (number + 1) * "*")
     print("CODEMORE", number + 1, (number) * "*")
 for count in range(1, 20, 2):
@@ -475,7 +510,7 @@ COL2 = [row[1] for row in MATRIX]                       #Get the items in second
 MATRI = [row[1] + 1 for row in MATRIX]                  #Adds 1 to all the items in second column
 MATR = [row[1] for row in MATRIX if row[1] % 2 == 0]    #This line filter out odd item
 DIAG =  [MATRIX[i][i] for i in [0, 1, 2]]               #Collect a diagonal from matrix
-DOUBLE = [b * 3 for b in 'spam']                        #Multiply the string item
+DOUBLE = [b * 3 for b in 'spam']                        #Multiply each item in the string by 3
 GENERATOR = (sum(row) for row in MATRIX)                #This creates a generator of row sum
 print(COL2)
 print(MATRI)
